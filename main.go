@@ -69,18 +69,18 @@ func getState(path string) (State, error) {
 	var state State
 	terraformVersion := "0.12"
 
-	cmd := exec.Command("terraform", "state", "pull")
+	cmd := exec.Command("terragrunt", "state", "pull")
 	cmd.Dir = path
 	cmd.Stdout = &out
 
 	err := cmd.Run()
 	if err != nil {
-		return nil, fmt.Errorf("Error running `terraform state pull` in directory %s, %s\n", path, err)
+		return nil, fmt.Errorf("Error running `terragrunt state pull` in directory %s, %s\n", path, err)
 	}
 
 	b, err := ioutil.ReadAll(&out)
 	if err != nil {
-		return nil, fmt.Errorf("Error reading output of `terraform state pull`: %s\n", err)
+		return nil, fmt.Errorf("Error reading output of `terragrunt state pull`: %s\n", err)
 	}
 
 	// If there was no output, return nil and no error
