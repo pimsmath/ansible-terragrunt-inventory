@@ -2,7 +2,8 @@ ansible-terragrunt-inventory
 ===========================
 
 A dynamic inventory script for Ansible and Terragrunt. This is a minor
-modification of https://github.com/jtopjian/ansible-terraform-inventory
+modification of
+[ansible-terraform-inventory](https://github.com/jtopjian/ansible-terraform-inventory)
 to use terragrunt in place of terraform.
 
 Quickstart
@@ -33,11 +34,19 @@ resource "ansible_group" "web" {
 
 Next, use this script as your Ansible dynamic inventory script.
 
-Set the `TF_STATE` environment variable to the directory which would
+Set the TF_STATE environment variable to the directory which would
 contain the terraform.tfstate if the state was held locally.
 
+Installation
+------------
+
+Download the latest [release](https://github.com/pimsmath/ansible-terragrunt-inventory/releases).
+
+Building From Source
+--------------------
 
 ```shell
+$ go get github.com/pimsmath/ansible-terragrunt-inventory
 $ go build -o $GOPATH/bin/terraform-inventory
 $ ln -s $GOPATH/bin/terraform-inventory /path/to/ansible/hosts
 ```
