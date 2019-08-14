@@ -1,4 +1,4 @@
-module github.com/jtopjian/ansible-terraform-inventory
+module github.com/pimsmath/ansible-terragrunt-inventory
 
 go 1.12
 

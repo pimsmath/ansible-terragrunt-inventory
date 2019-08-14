@@ -47,6 +47,6 @@ Building From Source
 
 ```shell
 $ go get github.com/pimsmath/ansible-terragrunt-inventory
-$ go build -o $GOPATH/bin/terraform-inventory
-$ ln -s $GOPATH/bin/terraform-inventory /path/to/ansible/hosts
+$ go build -o $GOPATH/bin/terragrunt-inventory
+$ ln -s $GOPATH/bin/terragrunt-inventory /path/to/ansible/inventory
 ```
